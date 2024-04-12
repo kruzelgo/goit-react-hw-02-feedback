@@ -25,20 +25,21 @@ export const App = () => {
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'flex-start',
+        alignContent: 'center',
         fontSize: 40,
         color: '#6F4E37',
         fontWeight: 'bolder',
+        marginLeft: '60px',
       }}
     >
-      Please leave feedback
-      <Section title="Please leave feedback">
+      <Section className="feedbackTitle" title="Please leave feedback">
         <FeedbackOptions
           options={['good', 'neutral', 'bad']}
           onLeaveFeedback={handleFeedback}
         />
       </Section>
-      <Section title="Statistics">
+      <Section className="statistics" title="Statistics">
         {total > 0 ? (
           <Statistics
             good={good}
