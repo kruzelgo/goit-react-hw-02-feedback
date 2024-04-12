@@ -1,3 +1,7 @@
+import { Section } from './Section/Section';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
+import { Statistic } from './Statistics/Statistics';
+
 export const App = () => {
   return (
     <div
@@ -5,12 +9,18 @@ export const App = () => {
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
+        flexDirection: 'column',
         alignItems: 'center',
         fontSize: 40,
-        color: '#010101'
+        color: '#6F4E37',
+        fontWeight: 'bolder',
       }}
     >
-      React homework template
+      Please leave feedback
+      <FeedbackOptions
+        options={Object.keys(this.state)}
+        onLeaveFeedback={this.updateState}
+      />
     </div>
   );
 };
